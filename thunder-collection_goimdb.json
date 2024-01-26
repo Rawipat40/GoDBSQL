@@ -1,0 +1,239 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "goimdb",
+    "dateExported": "2024-01-18T16:20:36.263Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "21217d35-5980-462a-a5a4-fb6e2e603391",
+            "colId": "4127cf21-e1f4-4138-8268-33f989a0893a",
+            "containerId": "",
+            "name": "GET /movies",
+            "url": "http://localhost:2565/movies",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-18T16:18:42.251Z",
+            "modified": "2024-01-18T16:18:42.251Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json; charset=UTF-8"
+                }
+            ]
+        },
+        {
+            "_id": "66d72322-9a19-4601-a397-1bc80b908ea2",
+            "colId": "4127cf21-e1f4-4138-8268-33f989a0893a",
+            "containerId": "",
+            "name": "GET /movies?year=2019",
+            "url": "http://localhost:2565/movies?year=2019",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-01-18T16:18:42.254Z",
+            "modified": "2024-01-18T16:18:42.254Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "year",
+                    "value": "2019",
+                    "isPath": false
+                }
+            ],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json; charset=UTF-8"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.[0].year",
+                    "action": "equal",
+                    "value": "2019"
+                }
+            ]
+        },
+        {
+            "_id": "49e3282f-b2a2-4d86-99dd-2b55c55dd6ca",
+            "colId": "4127cf21-e1f4-4138-8268-33f989a0893a",
+            "containerId": "",
+            "name": "GET /movies/:id",
+            "url": "http://localhost:2565/movies/tt4154796",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-01-18T16:18:42.252Z",
+            "modified": "2024-01-18T16:18:42.252Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.imdbID",
+                    "action": "equal",
+                    "value": "tt4154796"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.title",
+                    "action": "equal",
+                    "value": "Avengers: Endgame"
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json; charset=UTF-8"
+                }
+            ]
+        },
+        {
+            "_id": "0ce4014a-38f5-4a99-a1c2-2ed8ad23c755",
+            "colId": "4127cf21-e1f4-4138-8268-33f989a0893a",
+            "containerId": "",
+            "name": "POST /movies",
+            "url": "http://localhost:2565/movies",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-01-18T16:18:42.253Z",
+            "modified": "2024-01-18T16:20:26.344Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"imdbID\": \"tt4154796\",\n  \"title\": \"Avengers: Endgame\",\n  \"year\": 2019,\n  \"rating\": 8.4,\n  \"isSuperHero\": true\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "201"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json; charset=UTF-8"
+                }
+            ]
+        },
+        {
+            "_id": "c9e0e1c7-8f40-4f6e-a103-3053988025d0",
+            "colId": "4127cf21-e1f4-4138-8268-33f989a0893a",
+            "containerId": "",
+            "name": "PUT /movies/:id",
+            "url": "http://localhost:2565/movies/tt4154796",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-01-18T16:18:42.255Z",
+            "modified": "2024-01-18T16:18:42.255Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"imdbID\": \"tt4154796\",\n  \"title\": \"Avengers: Endgame\",\n  \"year\": 2019,\n  \"rating\": 9.9,\n  \"isSuperHero\": true\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "200"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "Content-Type",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "application/json; charset=UTF-8"
+                },
+                {
+                    "type": "json-query",
+                    "custom": "json.rating",
+                    "action": "equal",
+                    "value": "9.9"
+                }
+            ]
+        }
+    ]
+}
