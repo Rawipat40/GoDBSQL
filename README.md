@@ -8,13 +8,58 @@ GoDB with Echo is a simple project demonstrating basic database operations in Go
 - **POST**: Add new data to the database.
 - **PUSH**: Update existing data in the database.
 
+## Installation
+
+1. **Clone the repository:**
+
+    ```
+    git clone https://github.com/Rawipat40/GoDBSQL.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```
+    cd GoDBSQL
+    ```
+
+3. **Install dependencies:**
+
+    ```
+    go mod tidy
+    ```
+## Usage
+
+1. **Start the server:**
+
+    ```
+    go run main.go
+    ```
+
+2. **Access the endpoints:**
+
+    - GET Operations:
+        ```
+        GET /data
+        ```
+    - POST Operations:
+        ```
+        POST /data
+        ```
+    - PUT Operations:
+        ```
+        PUT /data/:id
+        ```
+
+
 ## Prerequisites
 - Go programming language installed on your machine.
 - Basic understanding of RESTful APIs and database operations.
 
-## Disclaimer
-This project is intended for demonstration purposes only. Be cautious when using it in production environments.
+## What I Have Learned
 
-## Acknowledgments
-- Special thanks to contributors and the Echo framework community.
-- Inspired by various database-related projects in Golang.
+Through this project, I have gained valuable insights into:
+
+- Integrating a database with a Golang web application.
+- Implementing CRUD operations using Golang and the Echo framework.
+- Handling HTTP requests and responses in a web application context.
+- Managing dependencies in a Golang project using modules.
